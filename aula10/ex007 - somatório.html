@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando  Números</title>
+    <style>
+        body {
+            font: normal 20pt arial;
+            height: fit-content;
+            align-items: center;
+        }
+        input{
+            font: normal 20pt arial;
+            width: 100px;
+        }
+        div#res{
+            margin-top: 20px;
+        }
+        .div{
+            border: 1px solid black;
+            width: fit-content;
+            
+        }
+        .dentro{
+            padding: 10px;
+            padding-top: 0px;
+        }
+        .fora{
+            justify-content: center;
+            display: flex;
+        }
+        .btn{
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            transition: all .3s;
+            border: none;
+            height: 40px;
+        }
+        .btn:hover{
+            background-color: rgba(0, 0, 255, 0.71);
+        }
+        h1{
+            color: rgba(0, 0, 255, 0.774);
+        }
+    </style>
+</head>
+<body>
+    <div class="fora">
+        <div class="div">
+            <div class="dentro">
+                <h1>Somatório</h1>
+                <input type="number" name="txtn1" id="txtn1">+
+                <input type="number" name="txtn2" id="txtn2">
+                <input type="button" value="somar" onclick="somar()" class="btn">
+                <div id="res">Resultado</div>
+            </div>
+    </div>
+    </div>
+    <script>
+        function somar(){
+            var tn1 = window.document.querySelector('input#txtn1')
+            var tn2 = window.document.querySelector('input#txtn2')
+            var res = window.document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é <strong>${s}</strong>`
+        }
+        document.addEventListener('keydown', function(event) {
+            // Verifica se a tecla pressionada foi a tecla "Enter"
+            if (event.key === 'Enter') {
+                somar();  // Chama a função somar quando a tecla Enter for pressionada
+            }
+        });
+    </script>
+</body>
+</html>

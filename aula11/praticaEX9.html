@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pratica exercicio nove</title>
+</head>
+<body>
+    <h1>informe seu pais</h1>
+    <input type="text" name="pais" id="pais">
+    <input type="button" value="ver" onclick="pais()">
+    <div id="res">resultado</div>
+    <script>
+        
+        function pais(){
+            var inp = window.document.getElementById('pais')
+            var pais = String(inp.value)
+            var res = window.document.getElementById('res')
+            
+            if(pais == 'brasil'){
+                res.innerText = 'voce e br'
+            }else{
+                res.innerText = 'voce e estrangeiro'
+            }
+        }
+    </script>
+</body>
+</html>
